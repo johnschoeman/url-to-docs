@@ -1,5 +1,5 @@
-const fs = require("fs")
-const https = require("https")
+import fs from "fs"
+import https from "https"
 
 const host = process.argv[2] || "https://www.lua.org/pil/"
 const file = process.argv[3] || "contents.html"
@@ -7,22 +7,18 @@ const targetDir = process.argv[3] || "./output"
 
 console.log({ host, file, targetDir })
 
-const outFile = `./${targetDir}/${file}`
-
-fs.stat(targetDir, (err, stats) => {
+fs.stat(targetDir, (_err, stats) => {
   if (stats.isDirectory()) {
     fs.rmdirSync(targetDir, { recursive: true })
   }
   fs.mkdirSync(targetDir)
 })
 
-const options = {}
-
 const initalURL = `${host}${file}`
 
 const downloadAndSave = (url: string): void => {
   https.get(url, res => {
-    let data = []
+    let data: any[] = []
 
     res.on("data", chunk => {
       data.push(chunk)
@@ -42,3 +38,5 @@ const downloadAndSave = (url: string): void => {
 }
 
 downloadAndSave(initalURL)
+
+export {}
