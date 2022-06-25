@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "allowJs": true,
-    "module": "esnext",
+    "module": "commonjs",
     "isolatedModules": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
