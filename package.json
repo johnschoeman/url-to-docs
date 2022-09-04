@@ -1,19 +1,37 @@
 {
-  "name": "crawl-for-docs",
-  "version": "1.0.0",
-  "description": "",
+  "name": "url-to-docs",
   "main": "index.js",
+  "version": "0.0.0",
+  "author": "John Schoeman",
+  "license": "MIT",
+  "repository": "https://github.com/johnschoeman/url-to-docs.git",
+  "homepage": "https://github.com/johnschoeman/url-to-docs",
+  "bugs": "https://github.com/johnschoeman/url-to-docs/issues",
+  "keywords": [
+    "documentation",
+    "docs",
+    "html",
+    "crawl",
+    "web",
+    "web-crawler"
+  ],
+  "bin": {
+    "urltodocs": "lib/cli.js"
+  },
   "scripts": {
     "format": "prettier -w .",
     "tsc": "npx tsc",
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "start": "node build/crawl.js"
+    "build": "./bin/build.sh",
+    "tsc:watch": "tsc --watch",
+    "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/jest": "^29.0.0",
     "@types/node": "^18.0.0",
+    "esbuild": "^0.15.6",
+    "jest": "^29.0.2",
     "prettier": "^2.7.1",
     "serve": "^13.0.2",
     "typescript": "^4.7.4"
