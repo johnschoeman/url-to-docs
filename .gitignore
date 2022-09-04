@@ -1,3 +1,7 @@
 node_modules
 output
 build
+lib
+test
+url_to_docs_output
+test_output
